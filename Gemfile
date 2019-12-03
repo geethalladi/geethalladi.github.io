@@ -9,7 +9,7 @@ ruby '2.4.0'
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.4.3"
+gem "jekyll", "~> 3.0"
 
 gem "github-pages", group: :jekyll_plugins
 
