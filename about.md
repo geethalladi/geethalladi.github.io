@@ -7,6 +7,8 @@ permalink: /about/
 
 * An engineer at heart and an advocate of structured, systemic thinking
 
+* Interested in building Distributed systems, Deep Learning Models, LLM Inferences and AI Engineering
+
 * I build mental models drawn from diverse and sometimes esoteric disciplines to improve decision-making and better understand the world
 
 * I aspire to become a lifelong "learning machine" in the spirit of [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger) — constantly refining, updating, and compounding knowledge.
