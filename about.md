@@ -3,15 +3,31 @@ layout: page
 title: About
 permalink: /about/
 ---
+## About Me
 
-To be updated !
+* An engineer at heart and an advocate of structured, systemic thinking
 
-<!-- This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/) -->
+* I build mental models drawn from diverse and sometimes esoteric disciplines to improve decision-making and better understand the world
 
-<!-- You can find the source code for the Jekyll new theme at: -->
-<!-- {% include icon-github.html username="jekyll" %} / -->
-<!-- [minima](https://github.com/jekyll/minima) -->
+* I aspire to become a lifelong "learning machine" in the spirit of [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger) — constantly refining, updating, and compounding knowledge.
 
-<!-- You can find the source code for Jekyll at -->
-<!-- {% include icon-github.html username="jekyll" %} / -->
-<!-- [jekyll](https://github.com/jekyll/jekyll) -->
+* Deeply influenced by the writings of my [Guru](https://en.wikipedia.org/wiki/Chandrashekharendra_Saraswati_VIII), [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger), [Shane Parish](https://fs.blog/blog/) and [Mike fisher](https://mikefisher.substack.com/)
+
+## About This Blog
+
+* A space where I document my experiments — both successful and failed.
+
+* A public notebook where ideas are tested, refined, and occasionally discarded.
+
+* An attempt to cross-link thoughts over time, so patterns emerge and insights compound.
+
+## Why write a blog
+
+* For a deeper reflection on my motivations refer to [Why write a blog](https://geethalladi.github.io/writing/2026/02/27/why-i-blog.html)
+
+## Connect
+
+I enjoy thoughtful conversations on mental models, systems thinking, and engineering.
+
+- LinkedIn: https://www.linkedin.com/in/geethalladi/
+- GitHub: https://github.com/geethalladi/
