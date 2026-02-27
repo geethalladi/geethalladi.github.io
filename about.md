@@ -15,11 +15,11 @@ permalink: /about/
 
 ### About This Blog
 
-* A space where I document my experiments — both successful and failed.
+* Space where I document my experiments — both successful and failed
 
-* A public notebook where ideas are tested, refined, and occasionally discarded.
+* Public notebook where ideas are tested, refined, and occasionally discarded
 
-* An attempt to cross-link thoughts over time, so patterns emerge and insights compound.
+* Attempt to cross-link thoughts over time, so patterns emerge and insights compound
 
 ### Why write a blog
 
@@ -27,7 +27,7 @@ permalink: /about/
 
 ### Connect
 
-I enjoy thoughtful conversations on mental models, systems thinking, and engineering.
+I enjoy thoughtful conversations on mental models, systems thinking, and engineering
 
 * [LinkedIn](https://www.linkedin.com/in/geethalladi/)
 * [Github](https://github.com/geethalladi/)
