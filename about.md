@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-## About Me
+### About Me
 
 * An engineer at heart and an advocate of structured, systemic thinking
 
@@ -13,7 +13,7 @@ permalink: /about/
 
 * Deeply influenced by the writings of my [Guru](https://en.wikipedia.org/wiki/Chandrashekharendra_Saraswati_VIII), [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger), [Shane Parish](https://fs.blog/blog/) and [Mike fisher](https://mikefisher.substack.com/)
 
-## About This Blog
+### About This Blog
 
 * A space where I document my experiments — both successful and failed.
 
@@ -21,13 +21,13 @@ permalink: /about/
 
 * An attempt to cross-link thoughts over time, so patterns emerge and insights compound.
 
-## Why write a blog
+### Why write a blog
 
 * For a deeper reflection on my motivations refer to [Why write a blog](https://geethalladi.github.io/writing/2026/02/27/why-i-blog.html)
 
-## Connect
+### Connect
 
 I enjoy thoughtful conversations on mental models, systems thinking, and engineering.
 
-- LinkedIn: https://www.linkedin.com/in/geethalladi/
-- GitHub: https://github.com/geethalladi/
+* [LinkedIn](https://www.linkedin.com/in/geethalladi/)
+* [Github](https://github.com/geethalladi/)
