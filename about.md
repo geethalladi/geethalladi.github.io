@@ -11,7 +11,7 @@ permalink: /about/
 
 * I build mental models drawn from diverse and sometimes esoteric disciplines to improve decision-making and better understand the world
 
-* I aspire to become a lifelong "learning machine" in the spirit of [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger) — constantly refining, updating, and compounding knowledge.
+* I aspire to become a lifelong learner (in the spirit of [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger) - a "learning machine") - constantly refining, updating, and compounding knowledge.
 
 <!--
 * Deeply influenced by the writings of my [Guru](https://en.wikipedia.org/wiki/Chandrashekharendra_Saraswati_VIII), [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger), [Shane Parish](https://fs.blog/blog/) and [Mike fisher](https://mikefisher.substack.com/)
@@ -35,3 +35,7 @@ I enjoy thoughtful conversations on mental models, systems thinking, and enginee
 
 * [LinkedIn](https://www.linkedin.com/in/geethalladi/)
 * [Github](https://github.com/geethalladi/)
+
+### Gratitude
+
+* I am eternally grateful to my Gurus — the teachers, mentors, and guides who have shaped my understanding and illuminated my path.
