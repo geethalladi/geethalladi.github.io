@@ -13,7 +13,9 @@ permalink: /about/
 
 * I aspire to become a lifelong "learning machine" in the spirit of [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger) — constantly refining, updating, and compounding knowledge.
 
+<!--
 * Deeply influenced by the writings of my [Guru](https://en.wikipedia.org/wiki/Chandrashekharendra_Saraswati_VIII), [Charles T Munger](https://en.wikipedia.org/wiki/Charlie_Munger), [Shane Parish](https://fs.blog/blog/) and [Mike fisher](https://mikefisher.substack.com/)
+-->
 
 ### About This Blog
 
