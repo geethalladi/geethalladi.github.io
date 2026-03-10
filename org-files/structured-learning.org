@@ -1,0 +1,22 @@
+* Structured Learning
+- Layered Learning
+** Importance of Structured Learning
+- Overwhelming
+- Measuring Progress
+- Meta of learning
+** High level steps
+*** Start with "Why"
+- dayjob
+- curiosity
+- shiny new thing -> every one is talking about
+  - hyped
+*** Real world Use Cases / Where it is used
+*** Problem Modeling / How to use it
+*** Implementation / Demo
+*** High Level Components that make this up
+*** Peel the onion
+** Next steps
+- Try learning Graph Algorithms (Topological Sort, Shortest Path)
+- Infrastructure components like K8S,
+- AI algorithms like SGD, Transformers, RAG, Diffusion models
+- Math like Calculus and Linear Algebra

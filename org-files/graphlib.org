@@ -1,0 +1,20 @@
+* Topological Sort in Python using Graphlib
+# Post of Graphlib
+** Intent
+- To learn and apply Graph Algorithms
+- One of the most useful ones - Topological Sort
+** Real world Use cases
+- Modeling real world problems to leverage this algorithm
+- Once you understand the "what" and "where" is algorithm is useful, you will find it everywhere
+- Managing dependencies
+  - Course Scheduling: Between courses in college
+  - Library dependencies for a process
+- Batch Job Parallelisation
+** Example
+*** Course Scheduling
+*** Library Dependencies
+** On the Periphery
+- Other algorithms supplied by Graphlib
+** Next Steps
+- Peel under the onion to understand the internals of the algorithm is implemented
+- What are the data structures required for efficiently computing the topo sort order
