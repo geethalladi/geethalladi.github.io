@@ -111,18 +111,17 @@ Questions to consider:
 Not all data needs strong consistency, and relaxing constraints can simplify the
 system significantly.
 
-*** Security and Compliance
+*** Regulatory Requirements
 
-Identify security and regulatory requirements.
+Identify the regulatory requirements.
 
 Examples:
 
-- Authentication and authorization
 - Encryption requirements
 - Data residency regulations
 - Compliance standards (GDPR, SOC2, HIPAA, etc.)
 
-Security considerations should be integrated into the design from the beginning.
+Regulatory considerations should be integrated into the design from the beginning.
 
 *** Back-of-the-Envelope Estimation
 
@@ -266,6 +265,56 @@ Mitigation strategies include:
 - Graceful degradation
 - Redundancy
 
+** Non functional Characteristics
+
+A well-designed system typically aims for the following qualities:
+
+- Scalability
+- Availability
+- Reliability
+- Maintainability
+
+Balancing these characteristics while meeting business goals is the essence of
+system design.
+
+*** Scalability
+
+Design the system to handle growth.
+
+Important considerations:
+
+- Horizontal scaling
+- Load balancing
+- Partitioning and sharding
+- Capacity planning
+
+Also think about how the system behaves during sudden traffic spikes.
+
+*** Trade-offs
+
+No system is perfect.
+
+Every design involves trade-offs such as:
+
+- Cost vs Performance
+- Consistency vs Availability
+- Latency vs Throughput
+- Simplicity vs Flexibility
+
+Explicitly documenting these trade-offs makes the design easier to reason about.
+
+** Security and Compliance
+Security must be integrated throughout the system.
+
+Key elements include:
+
+- Authentication (AuthN)
+- Authorization (AuthZ)
+- Rate limiting
+- Input validation
+- Encryption
+
+Security should never be an afterthought.
 ** Infrastructure & Operations
 *** Deployment Options
 
@@ -312,20 +361,7 @@ Opportunities for optimization include:
 - Data retention policies
 - Archival and cold storage
 - GDPR deletion requirements
-** Platform Considerations
-*** Developer Experience and Onboarding
-
-If the system is a platform or API, developer experience becomes important.
-
-Providing:
-
-- SDKs
-- Client libraries
-- Good documentation
-
-can significantly improve adoption and reduce integration friction.
-
-** Observability (M,A,L,T,E)
+*** Observability (M,A,L,T,E)
 
 A production system must be observable.
 
@@ -345,53 +381,15 @@ Additional practices include:
 - Debugging tools
 - Distributed tracing
 
-** Scalability
+** Platform Considerations
+*** Developer Experience and Onboarding
 
-Design the system to handle growth.
+If the system is a platform or API, developer experience becomes important.
 
-Important considerations:
+Providing:
 
-- Horizontal scaling
-- Load balancing
-- Partitioning and sharding
-- Capacity planning
+- SDKs
+- Client libraries
+- Good documentation
 
-Also think about how the system behaves during sudden traffic spikes.
-
-** Desired System Characteristics / Non functionals
-
-A well-designed system typically aims for the following qualities:
-
-- Scalability
-- Availability
-- Reliability
-- Maintainability
-
-Balancing these characteristics while meeting business goals is the essence of
-system design.
-** Trade-offs
-
-No system is perfect.
-
-Every design involves trade-offs such as:
-
-- Cost vs Performance
-- Consistency vs Availability
-- Latency vs Throughput
-- Simplicity vs Flexibility
-
-Explicitly documenting these trade-offs makes the design easier to reason about.
-
-** Security and Compliance
-
-Security must be integrated throughout the system.
-
-Key elements include:
-
-- Authentication (AuthN)
-- Authorization (AuthZ)
-- Rate limiting
-- Input validation
-- Encryption
-
-Security should never be an afterthought.
+can significantly improve adoption and reduce integration friction.
