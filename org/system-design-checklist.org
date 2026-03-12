@@ -3,7 +3,7 @@ TITLE: System Design Checklist
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: design
 #+JEKYLL_TAGS: [design systems interviews template questions]
-* System Design Template
+* System Design Checklist
 - We as humans keep seeking answers to questions
 - When designing an application it is apparent we should not only build the system right but also build the right application
 - More than the answers or the solution, asking the right questions becomes important
