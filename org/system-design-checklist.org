@@ -1,94 +1,397 @@
-TITLE: System Design Checklist
+#+TITLE:System Design Checklist
 #+DATE: 2026-03-12
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: design
-#+JEKYLL_TAGS: [design systems interviews template questions]
+#+JEKYLL_TAGS: design systems interviews template questions
 * System Design Checklist
-- We as humans keep seeking answers to questions
-- When designing an application it is apparent we should not only build the system right but also build the right application
-- More than the answers or the solution, asking the right questions becomes important
-- Only after we ask the right questions we would end up seeking the "right" answers for them
-- The following template I collected from different sources had helped me with building
-  the "right" system (most often) which would generate value to our customers
-** Use case / Questions
-*** Why / Who
-- Why is the system required in the first place
-- Who are the users of the system
-*** Users / Traffic Volume
-Once we know the users of our system, we need to answer the following
-**** Distribution
-- Is there any distributions of users accessing the system during specific time / period
-**** MAUs
-- Montly active users of the system
-**** Peak Time / Business Hours
-- What constitutes the peak business hours for the system
-**** Read / Write IOPS
-- How much will be load during the normal operations and how will it differ during the surge
-*** Success Metrics / KPIs
-- Define the Product / Business Success Metrics
-- How do you quantify the system generated the desired value to its customers
-*** Constraints / Trade offs
-- What are the internal / external constraints that exists in the system
-- What kind of trade off(s) is acceptable
-*** Data consistency
-- What kind of data consistency guarantees is expected by the customers
-- Do they really need to strong consistency for all their data
-*** Security + Compliance
-- What are the security and legal compliance to be satisfied by the system
-*** Back of Envelope Estimates
-- Any back of envelope computation that would help simplify the system implementation
-** High-Level
-*** Core system components
-- What are the core components / services that constitutes this system
-*** Architecture diagram
-- High Level Architecture diagrams along with interactions between the components
-*** Integration Points
-- How will the system interact with its clients
-- The Surface Area where individual components interact with each other
-*** API endpoints / Service Communication
-- Standard Specifications for the API end points along with their constraints
+Engineers spend a lot of time searching for answers. However, in system design,
+the quality of the *questions* often determines the quality of the solution.
 
-** Details
-*** Data storage
-- SQL / NoSQL
-  - Data model / Schema
-  - Index / Optimization
+When building a system, the goal is not just to *build the system right*, but to
+*build the right system*. This distinction becomes critical in large-scale
+distributed systems. Before diving into architecture diagrams, technologies, or
+algorithms, it is important to clarify the problem space and constraints.
+
+Over time, I collected and curated the following checklist from multiple sources. It has
+helped me structure my thinking when designing production systems and when mentoring
+junior architects to avoid common design blind spots. The checklist is not meant to be
+rigid. Instead, think of it as a structured guide to ensure the important questions are not overlooked.
+
+** Use Cases and Problem Framing
+Before discussing architecture, we must understand the problem.
+
+*** Why / Who
+
+- Why does this system need to exist?
+- What problem does it solve?
+- Who are the primary users of the system?
+
+Examples of users could include:
+- End users
+- Internal services
+- External partners
+- Developers using an API platform
+
+Understanding the *why* and *who* shapes almost every design decision that
+follows.
+
+*** Users and Traffic Volume
+
+Once we understand the users, we need to estimate how the system will be used.
+
+**** User Distribution
+
+- Are users globally distributed?
+- Are there geographic usage patterns?
+- Does traffic vary across time zones?
+
+**** MAU / DAU
+
+- Monthly Active Users (MAU)
+- Daily Active Users (DAU)
+
+These numbers help estimate system scale.
+
+**** Peak Traffic
+
+- What are the peak hours for the system?
+- Are there seasonal spikes (e.g., sales events)?
+
+**** Read / Write Patterns
+
+- What is the expected read/write ratio?
+- Are there burst workloads or sudden traffic spikes?
+
+Understanding traffic patterns is critical for designing storage, caching, and
+scaling strategies.
+
+*** Success Metrics / KPIs
+
+Define what success looks like.
+
+Examples include:
+
+- Latency targets
+- Throughput
+- Error rates
+- User engagement
+- Business metrics (conversion, retention, etc.)
+
+Without clear metrics, it is difficult to determine whether the system is
+actually delivering value.
+
+*** Constraints and Trade-offs
+
+Every system operates under constraints.
+
+These could include:
+
+- Budget constraints
+- Latency requirements
+- Regulatory requirements
+- Infrastructure limitations
+- Customer SLA / SLO requirements
+
+Understanding acceptable trade-offs is key. For example:
+
+- Consistency vs Availability
+- Cost vs Performance
+- Latency vs Throughput
+
+*** Data Consistency
+
+Clarify the consistency requirements.
+
+Questions to consider:
+
+- Do we need strong consistency?
+- Is eventual consistency acceptable?
+- Which parts of the system require stricter guarantees?
+
+Not all data needs strong consistency, and relaxing constraints can simplify the
+system significantly.
+
+*** Security and Compliance
+
+Identify security and regulatory requirements.
+
+Examples:
+
+- Authentication and authorization
+- Encryption requirements
+- Data residency regulations
+- Compliance standards (GDPR, SOC2, HIPAA, etc.)
+
+Security considerations should be integrated into the design from the beginning.
+
+*** Back-of-the-Envelope Estimation
+
+Simple estimates help avoid under-designing or over-engineering the system.
+
+Examples:
+
+- Requests per second
+- Storage requirements
+- Network bandwidth
+- Cache size
+
+Rough calculations provide intuition about system scale.
+
+** High-Level Design
+
+Once the problem is well understood, we can outline the architecture.
+
+*** Core System Components
+
+Identify the major components of the system. What existing components can we leverage
+
+Examples:
+
+- API gateway
+- Application services
+- Databases
+- Message queues
+- Cache layers
+- Background workers
+
+*** Architecture Diagram
+
+Create a high-level diagram showing:
+
+- System components
+- Data flow
+- Interactions between services
+
+The goal is to communicate the overall structure of the system clearly.
+
+*** Integration Points
+
+Define how different parts of the system interact.
+
+This includes:
+
+- Client interfaces
+- Internal service communication
+- Third-party integrations
+
+Understanding the system's *surface area* helps identify potential bottlenecks
+and failure points.
+
+*** APIs and Service Communication
+
+Define service interfaces and communication patterns.
+
+Examples:
+
+- REST APIs
+- gRPC
+- Event-driven messaging
+- Webhooks
+
+Consider:
+
+- API versioning
+- Idempotency
+- Rate limits
+- Timeout and retry policies
+
+** Detailed Design
+
+After the high-level architecture is established, we can drill into the details.
+
+*** Data Storage
+
+Choose appropriate storage technologies.
+
+Examples:
+
+- SQL databases
+- NoSQL stores
+- Object storage
+
+Key considerations:
+
+- Data models and schemas
+- Indexing strategies
+- Query optimization
+
+Also consider:
+
 - Replication
-- Shard
-*** Mental Model / Algorithms
-- With alternates
-*** Caching
-- Distributed / Redis
-- Local
+- Sharding / partitioning
+
+*** Algorithms and Mental Models
+
+Some systems require specific algorithms or data structures.
+
+Examples:
+
+- Ranking algorithms
+- Deduplication strategies
+- Scheduling algorithms
+
+Always consider alternative approaches and their trade-offs.
+
+*** Caching Static data
+
+Caching is essential for performance at scale.
+
+Common caching layers include:
+
+- Distributed cache (Redis, Memcached)
+- Expiration Policy (TTLs)
+- Eviction Policy
+- Local in-memory cache
+- CDN caching
+
+Key questions:
+
+- What data should be cached?
+- What is the cache invalidation strategy?
+
 *** Fault Tolerance
-- Failure Scenarios / Fault Tolerance
-- Mitigation strategies
-** Infra
+
+Distributed systems fail in unpredictable ways.
+
+Consider:
+
+- Service failures
+- Network partitions
+- Partial outages
+
+Mitigation strategies include:
+
+- Retries
+- Circuit breakers
+- Graceful degradation
+- Redundancy
+
+** Infrastructure & Operations
 *** Deployment Options
-- Cloud VS Non Cloud
-*** Cost Savings / Optimizations
-- Any possibility of saving the costs by automating different aspects
-** Platform Aspects
-*** Quick Onboarding
-- Will providing an SDK simplify and fasten the onboarding of our clients
+
+Where will the system run? Will it be a separate microservice or part of an existing service
+
+Options include:
+
+- Cloud infrastructure
+- On-premise deployments
+- Hybrid environments
+
+Consider scalability, operational complexity, and vendor lock-in.
+
+*** Cost Optimization
+
+Large systems can incur significant operational costs.
+
+Opportunities for optimization include:
+
+- Autoscaling
+- Storage tiering
+- Efficient resource utilization
+- Automated lifecycle management
+
+*** Backpressure
+- What happens when the system is overloaded?
+- Are requests queued, throttled, or dropped?
+
+*** Disaster Recovery
+- What happens during regional outages?
+- What are the RTO / RPO requirements?
+
+*** Deployment Strategy
+- Blue / Green deployments
+- Canary releases
+- Rollback strategy
+
+*** Testing
+- Load testing
+- Chaos testing
+- Failure injection
+
+*** Data Lifecycle
+- Data retention policies
+- Archival and cold storage
+- GDPR deletion requirements
+** Platform Considerations
+*** Developer Experience and Onboarding
+
+If the system is a platform or API, developer experience becomes important.
+
+Providing:
+
+- SDKs
+- Client libraries
+- Good documentation
+
+can significantly improve adoption and reduce integration friction.
+
 ** Observability (M,A,L,T,E)
-- Metrics / Alerts
-- Logging / Trace / Events
-- Debugging
-- Dashboard
+
+A production system must be observable.
+
+MALTE is a useful mnemonic:
+
+- Metrics
+- Alerts
+- Logs
+- Traces
+- Events
+
+These signals help diagnose issues and understand system behavior.
+
+Additional practices include:
+
+- Dashboards for system health
+- Debugging tools
+- Distributed tracing
+
 ** Scalability
-- Increased Load
-- Provisioning
-- Partitioning / Sharding
-** Trade-Offs
-- Cost / Performance
-- Consistency / Availability
-** Security
-- AuthN
-- AuthZ / Rate limiting
-- Rate limiting
-** Characteristics
+
+Design the system to handle growth.
+
+Important considerations:
+
+- Horizontal scaling
+- Load balancing
+- Partitioning and sharding
+- Capacity planning
+
+Also think about how the system behaves during sudden traffic spikes.
+
+** Desired System Characteristics / Non functionals
+
+A well-designed system typically aims for the following qualities:
+
 - Scalability
 - Availability
 - Reliability
 - Maintainability
+
+Balancing these characteristics while meeting business goals is the essence of
+system design.
+** Trade-offs
+
+No system is perfect.
+
+Every design involves trade-offs such as:
+
+- Cost vs Performance
+- Consistency vs Availability
+- Latency vs Throughput
+- Simplicity vs Flexibility
+
+Explicitly documenting these trade-offs makes the design easier to reason about.
+
+** Security and Compliance
+
+Security must be integrated throughout the system.
+
+Key elements include:
+
+- Authentication (AuthN)
+- Authorization (AuthZ)
+- Rate limiting
+- Input validation
+- Encryption
+
+Security should never be an afterthought.
