@@ -5,30 +5,30 @@ layout: post
 categories: 
 - writing
 tags: 
-- [mental-models, 
-- learning, 
-- blogging, 
-- reflection, 
-- thoughts]
+- mental-models 
+- learning 
+- blogging 
+- reflection 
+- thoughts
 ---
 
 
 # Table of Contents
 
-1.  [Why write a blog](#orgb206901)
-    1.  [Myself](#org0a26bf1)
-    2.  [Immediate Circle](#org739f9d4)
-    3.  [Wider Audience](#orgc6f198e)
+1.  [Why write a blog](#org264653a)
+    1.  [Myself](#org7cfb6b7)
+    2.  [Immediate Circle](#orgb029837)
+    3.  [Wider Audience](#org758d8d5)
 
 
-<a id="orgb206901"></a>
+<a id="org264653a"></a>
 
 # Why write a blog
 
 Let me think and classify my writing through the lens of my readers.
 
 
-<a id="org0a26bf1"></a>
+<a id="org7cfb6b7"></a>
 
 ## Myself
 
@@ -37,14 +37,14 @@ I write about the ideas I read, concepts I find fascinating, and small "tinker-t
 Alongside my private journal, my weblog becomes a searchable, discoverable archive of my intellectual journey. Writing down also helps my future self rediscover insights and reconnect the scattered dots.
 
 
-<a id="org739f9d4"></a>
+<a id="orgb029837"></a>
 
 ## Immediate Circle
 
 Many of these topics I discuss with friends and colleagues tend to repeat over time. Writing them allows me to articulate something once and reuse it multiple times. It also becomes a living log of useful ideas I frequently share in the conversations.
 
 
-<a id="orgc6f198e"></a>
+<a id="org758d8d5"></a>
 
 ## Wider Audience
 
