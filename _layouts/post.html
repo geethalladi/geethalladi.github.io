@@ -1,8 +1,28 @@
-{% if page.tags %}
-<p class="post-tags">
-  Tags:
-  {% for tag in page.tags %}
-  <a href="/tags/#{{ tag }}">{{ tag }}</a>
-  {% endfor %}
-</p>
-{% endif %}
+---
+layout: default
+---
+
+<article class="post">
+
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+
+    <p class="post-meta">
+      {{ page.date | date: "%B %d, %Y" }}
+    </p>
+
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <a class="tag" href="/tags/#{{ tag }}">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
