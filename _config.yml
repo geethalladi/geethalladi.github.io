@@ -22,6 +22,12 @@ url: "geethalladi.github.io" # the base hostname & protocol for your site, e.g. 
 twitter_username: geethalladi
 github_username:  geethalladi
 
+nav:
+  - title: About
+    url: /about/
+  - title: Tags
+    url: /tags/
+
 # Build settings
 markdown: kramdown
 theme: minima

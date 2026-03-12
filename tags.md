@@ -1,6 +1,6 @@
 ---
 layout: page
-title: All Tags
+title: Tags
 permalink: /tags/
 ---
 
