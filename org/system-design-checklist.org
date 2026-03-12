@@ -303,7 +303,7 @@ Every design involves trade-offs such as:
 
 Explicitly documenting these trade-offs makes the design easier to reason about.
 
-** Security and Compliance
+*** Security and Compliance
 Security must be integrated throughout the system.
 
 Key elements include:

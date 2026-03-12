@@ -14,43 +14,43 @@ tags:
 
 # Table of Contents
 
-1.  [System Design Checklist](#org577fc85)
-    1.  [Use Cases and Problem Framing](#org51e5505)
-        1.  [Why / Who](#orgb4871bc)
-        2.  [Users and Traffic Volume](#org1baf88a)
-        3.  [Success Metrics / KPIs](#org3d1d90d)
-        4.  [Constraints and Trade-offs](#org3c18176)
-        5.  [Data Consistency](#orga4803ba)
-        6.  [Regulatory Requirements](#orga7a119e)
-        7.  [Back-of-the-Envelope Estimation](#org1c68035)
-    2.  [High-Level Design](#org81aeeba)
-        1.  [Core System Components](#org5a897af)
-        2.  [Architecture Diagram](#org28ade93)
-        3.  [Integration Points](#org1e9c0f3)
-        4.  [APIs and Service Communication](#org2cc92b5)
-    3.  [Detailed Design](#orgca7da99)
-        1.  [Data Storage](#org9b9d665)
-        2.  [Algorithms and Mental Models](#org6dab9ea)
-        3.  [Caching Static data](#orgde00dee)
-        4.  [Fault Tolerance](#orgad88ab6)
-    4.  [Non functional Characteristics](#orga854617)
-        1.  [Scalability](#orgbf549b0)
-        2.  [Trade-offs](#org44f70ee)
-    5.  [Security and Compliance](#org9f5ea83)
-    6.  [Infrastructure & Operations](#org017485f)
-        1.  [Deployment Options](#org0511a17)
-        2.  [Cost Optimization](#orgdd35205)
-        3.  [Backpressure](#orgce719df)
-        4.  [Disaster Recovery](#org260178a)
-        5.  [Deployment Strategy](#org4688a82)
-        6.  [Testing](#orga30dc27)
-        7.  [Data Lifecycle](#orgc8f9429)
-        8.  [Observability (M,A,L,T,E)](#org4551c8f)
-    7.  [Platform Considerations](#orgd25b7d3)
-        1.  [Developer Experience and Onboarding](#org8f2ecc2)
+1.  [System Design Checklist](#orgbc648f2)
+    1.  [Use Cases and Problem Framing](#orgff2f46f)
+        1.  [Why / Who](#org10fdf55)
+        2.  [Users and Traffic Volume](#org5d2d7e9)
+        3.  [Success Metrics / KPIs](#org737077e)
+        4.  [Constraints and Trade-offs](#org81745e7)
+        5.  [Data Consistency](#org78f2aa2)
+        6.  [Regulatory Requirements](#orgf230d3f)
+        7.  [Back-of-the-Envelope Estimation](#orgfcf1c24)
+    2.  [High-Level Design](#org93d4099)
+        1.  [Core System Components](#orgefbecb8)
+        2.  [Architecture Diagram](#orgab3a3cf)
+        3.  [Integration Points](#org59d3cde)
+        4.  [APIs and Service Communication](#org5190fc3)
+    3.  [Detailed Design](#org6264114)
+        1.  [Data Storage](#org3b7b246)
+        2.  [Algorithms and Mental Models](#orgc96b6de)
+        3.  [Caching Static data](#orgc3cad18)
+        4.  [Fault Tolerance](#org1b44660)
+    4.  [Non functional Characteristics](#orgfd45e56)
+        1.  [Scalability](#org5ec27b6)
+        2.  [Trade-offs](#org45baad9)
+        3.  [Security and Compliance](#org8372dd9)
+    5.  [Infrastructure & Operations](#org802db35)
+        1.  [Deployment Options](#org0446d64)
+        2.  [Cost Optimization](#orgfeb1473)
+        3.  [Backpressure](#org7cd6b25)
+        4.  [Disaster Recovery](#org81189a8)
+        5.  [Deployment Strategy](#org884ce75)
+        6.  [Testing](#orga8816c1)
+        7.  [Data Lifecycle](#org695f797)
+        8.  [Observability (M,A,L,T,E)](#org955f3e1)
+    6.  [Platform Considerations](#org2ac9739)
+        1.  [Developer Experience and Onboarding](#org3f265fb)
 
 
-<a id="org577fc85"></a>
+<a id="orgbc648f2"></a>
 
 # System Design Checklist
 
@@ -68,14 +68,14 @@ junior architects to avoid common design blind spots. The checklist is not meant
 rigid. Instead, think of it as a structured guide to ensure the important questions are not overlooked.
 
 
-<a id="org51e5505"></a>
+<a id="orgff2f46f"></a>
 
 ## Use Cases and Problem Framing
 
 Before discussing architecture, we must understand the problem.
 
 
-<a id="orgb4871bc"></a>
+<a id="org10fdf55"></a>
 
 ### Why / Who
 
@@ -94,7 +94,7 @@ Understanding the **why** and **who** shapes almost every design decision that
 follows.
 
 
-<a id="org1baf88a"></a>
+<a id="org5d2d7e9"></a>
 
 ### Users and Traffic Volume
 
@@ -127,7 +127,7 @@ Once we understand the users, we need to estimate how the system will be used.
     scaling strategies.
 
 
-<a id="org3d1d90d"></a>
+<a id="org737077e"></a>
 
 ### Success Metrics / KPIs
 
@@ -145,7 +145,7 @@ Without clear metrics, it is difficult to determine whether the system is
 actually delivering value.
 
 
-<a id="org3c18176"></a>
+<a id="org81745e7"></a>
 
 ### Constraints and Trade-offs
 
@@ -166,7 +166,7 @@ Understanding acceptable trade-offs is key. For example:
 -   Latency vs Throughput
 
 
-<a id="orga4803ba"></a>
+<a id="org78f2aa2"></a>
 
 ### Data Consistency
 
@@ -182,7 +182,7 @@ Not all data needs strong consistency, and relaxing constraints can simplify the
 system significantly.
 
 
-<a id="orga7a119e"></a>
+<a id="orgf230d3f"></a>
 
 ### Regulatory Requirements
 
@@ -197,7 +197,7 @@ Examples:
 Regulatory considerations should be integrated into the design from the beginning.
 
 
-<a id="org1c68035"></a>
+<a id="orgfcf1c24"></a>
 
 ### Back-of-the-Envelope Estimation
 
@@ -213,14 +213,14 @@ Examples:
 Rough calculations provide intuition about system scale.
 
 
-<a id="org81aeeba"></a>
+<a id="org93d4099"></a>
 
 ## High-Level Design
 
 Once the problem is well understood, we can outline the architecture.
 
 
-<a id="org5a897af"></a>
+<a id="orgefbecb8"></a>
 
 ### Core System Components
 
@@ -236,7 +236,7 @@ Examples:
 -   Background workers
 
 
-<a id="org28ade93"></a>
+<a id="orgab3a3cf"></a>
 
 ### Architecture Diagram
 
@@ -249,7 +249,7 @@ Create a high-level diagram showing:
 The goal is to communicate the overall structure of the system clearly.
 
 
-<a id="org1e9c0f3"></a>
+<a id="org59d3cde"></a>
 
 ### Integration Points
 
@@ -265,7 +265,7 @@ Understanding the system's **surface area** helps identify potential bottlenecks
 and failure points.
 
 
-<a id="org2cc92b5"></a>
+<a id="org5190fc3"></a>
 
 ### APIs and Service Communication
 
@@ -286,14 +286,14 @@ Consider:
 -   Timeout and retry policies
 
 
-<a id="orgca7da99"></a>
+<a id="org6264114"></a>
 
 ## Detailed Design
 
 After the high-level architecture is established, we can drill into the details.
 
 
-<a id="org9b9d665"></a>
+<a id="org3b7b246"></a>
 
 ### Data Storage
 
@@ -317,7 +317,7 @@ Also consider:
 -   Sharding / partitioning
 
 
-<a id="org6dab9ea"></a>
+<a id="orgc96b6de"></a>
 
 ### Algorithms and Mental Models
 
@@ -332,7 +332,7 @@ Examples:
 Always consider alternative approaches and their trade-offs.
 
 
-<a id="orgde00dee"></a>
+<a id="orgc3cad18"></a>
 
 ### Caching Static data
 
@@ -352,7 +352,7 @@ Key questions:
 -   What is the cache invalidation strategy?
 
 
-<a id="orgad88ab6"></a>
+<a id="org1b44660"></a>
 
 ### Fault Tolerance
 
@@ -372,7 +372,7 @@ Mitigation strategies include:
 -   Redundancy
 
 
-<a id="orga854617"></a>
+<a id="orgfd45e56"></a>
 
 ## Non functional Characteristics
 
@@ -387,7 +387,7 @@ Balancing these characteristics while meeting business goals is the essence of
 system design.
 
 
-<a id="orgbf549b0"></a>
+<a id="org5ec27b6"></a>
 
 ### Scalability
 
@@ -403,7 +403,7 @@ Important considerations:
 Also think about how the system behaves during sudden traffic spikes.
 
 
-<a id="org44f70ee"></a>
+<a id="org45baad9"></a>
 
 ### Trade-offs
 
@@ -419,9 +419,9 @@ Every design involves trade-offs such as:
 Explicitly documenting these trade-offs makes the design easier to reason about.
 
 
-<a id="org9f5ea83"></a>
+<a id="org8372dd9"></a>
 
-## Security and Compliance
+### Security and Compliance
 
 Security must be integrated throughout the system.
 
@@ -436,12 +436,12 @@ Key elements include:
 Security should never be an afterthought.
 
 
-<a id="org017485f"></a>
+<a id="org802db35"></a>
 
 ## Infrastructure & Operations
 
 
-<a id="org0511a17"></a>
+<a id="org0446d64"></a>
 
 ### Deployment Options
 
@@ -456,7 +456,7 @@ Options include:
 Consider scalability, operational complexity, and vendor lock-in.
 
 
-<a id="orgdd35205"></a>
+<a id="orgfeb1473"></a>
 
 ### Cost Optimization
 
@@ -470,7 +470,7 @@ Opportunities for optimization include:
 -   Automated lifecycle management
 
 
-<a id="orgce719df"></a>
+<a id="org7cd6b25"></a>
 
 ### Backpressure
 
@@ -478,7 +478,7 @@ Opportunities for optimization include:
 -   Are requests queued, throttled, or dropped?
 
 
-<a id="org260178a"></a>
+<a id="org81189a8"></a>
 
 ### Disaster Recovery
 
@@ -486,7 +486,7 @@ Opportunities for optimization include:
 -   What are the RTO / RPO requirements?
 
 
-<a id="org4688a82"></a>
+<a id="org884ce75"></a>
 
 ### Deployment Strategy
 
@@ -495,7 +495,7 @@ Opportunities for optimization include:
 -   Rollback strategy
 
 
-<a id="orga30dc27"></a>
+<a id="orga8816c1"></a>
 
 ### Testing
 
@@ -504,7 +504,7 @@ Opportunities for optimization include:
 -   Failure injection
 
 
-<a id="orgc8f9429"></a>
+<a id="org695f797"></a>
 
 ### Data Lifecycle
 
@@ -513,7 +513,7 @@ Opportunities for optimization include:
 -   GDPR deletion requirements
 
 
-<a id="org4551c8f"></a>
+<a id="org955f3e1"></a>
 
 ### Observability (M,A,L,T,E)
 
@@ -536,12 +536,12 @@ Additional practices include:
 -   Distributed tracing
 
 
-<a id="orgd25b7d3"></a>
+<a id="org2ac9739"></a>
 
 ## Platform Considerations
 
 
-<a id="org8f2ecc2"></a>
+<a id="org3f265fb"></a>
 
 ### Developer Experience and Onboarding
 
