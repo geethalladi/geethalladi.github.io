@@ -2,27 +2,33 @@
 title: "Why write a blog"
 date: 2026-02-27
 layout: post
-categories:
+categories: 
 - writing
-tags:
-- [mental-models, learning, blogging, reflection, thoughts]
+tags: 
+- [mental-models, 
+- learning, 
+- blogging, 
+- reflection, 
+- thoughts]
 ---
 
+
 # Table of Contents
-1.  [Why I blog](#orgfa26ef9)
-    1.  [Myself](#orge09bb8e)
-    2.  [Immediate Circle](#org7d7de96)
-    3.  [Wider Audience](#org1a8712d)
+
+1.  [Why write a blog](#orgb206901)
+    1.  [Myself](#org0a26bf1)
+    2.  [Immediate Circle](#org739f9d4)
+    3.  [Wider Audience](#orgc6f198e)
 
 
-<a id="orgfa26ef9"></a>
+<a id="orgb206901"></a>
 
-# Why I blog
+# Why write a blog
 
 Let me think and classify my writing through the lens of my readers.
 
 
-<a id="orge09bb8e"></a>
+<a id="org0a26bf1"></a>
 
 ## Myself
 
@@ -31,14 +37,14 @@ I write about the ideas I read, concepts I find fascinating, and small "tinker-t
 Alongside my private journal, my weblog becomes a searchable, discoverable archive of my intellectual journey. Writing down also helps my future self rediscover insights and reconnect the scattered dots.
 
 
-<a id="org7d7de96"></a>
+<a id="org739f9d4"></a>
 
 ## Immediate Circle
 
 Many of these topics I discuss with friends and colleagues tend to repeat over time. Writing them allows me to articulate something once and reuse it multiple times. It also becomes a living log of useful ideas I frequently share in the conversations.
 
 
-<a id="org1a8712d"></a>
+<a id="orgc6f198e"></a>
 
 ## Wider Audience
 
