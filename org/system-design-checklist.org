@@ -1,0 +1,94 @@
+TITLE: System Design Checklist
+#+DATE: 2026-03-12
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: design
+#+JEKYLL_TAGS: [design systems interviews template questions]
+* System Design Template
+- We as humans keep seeking answers to questions
+- When designing an application it is apparent we should not only build the system right but also build the right application
+- More than the answers or the solution, asking the right questions becomes important
+- Only after we ask the right questions we would end up seeking the "right" answers for them
+- The following template I collected from different sources had helped me with building
+  the "right" system (most often) which would generate value to our customers
+** Use case / Questions
+*** Why / Who
+- Why is the system required in the first place
+- Who are the users of the system
+*** Users / Traffic Volume
+Once we know the users of our system, we need to answer the following
+**** Distribution
+- Is there any distributions of users accessing the system during specific time / period
+**** MAUs
+- Montly active users of the system
+**** Peak Time / Business Hours
+- What constitutes the peak business hours for the system
+**** Read / Write IOPS
+- How much will be load during the normal operations and how will it differ during the surge
+*** Success Metrics / KPIs
+- Define the Product / Business Success Metrics
+- How do you quantify the system generated the desired value to its customers
+*** Constraints / Trade offs
+- What are the internal / external constraints that exists in the system
+- What kind of trade off(s) is acceptable
+*** Data consistency
+- What kind of data consistency guarantees is expected by the customers
+- Do they really need to strong consistency for all their data
+*** Security + Compliance
+- What are the security and legal compliance to be satisfied by the system
+*** Back of Envelope Estimates
+- Any back of envelope computation that would help simplify the system implementation
+** High-Level
+*** Core system components
+- What are the core components / services that constitutes this system
+*** Architecture diagram
+- High Level Architecture diagrams along with interactions between the components
+*** Integration Points
+- How will the system interact with its clients
+- The Surface Area where individual components interact with each other
+*** API endpoints / Service Communication
+- Standard Specifications for the API end points along with their constraints
+
+** Details
+*** Data storage
+- SQL / NoSQL
+  - Data model / Schema
+  - Index / Optimization
+- Replication
+- Shard
+*** Mental Model / Algorithms
+- With alternates
+*** Caching
+- Distributed / Redis
+- Local
+*** Fault Tolerance
+- Failure Scenarios / Fault Tolerance
+- Mitigation strategies
+** Infra
+*** Deployment Options
+- Cloud VS Non Cloud
+*** Cost Savings / Optimizations
+- Any possibility of saving the costs by automating different aspects
+** Platform Aspects
+*** Quick Onboarding
+- Will providing an SDK simplify and fasten the onboarding of our clients
+** Observability (M,A,L,T,E)
+- Metrics / Alerts
+- Logging / Trace / Events
+- Debugging
+- Dashboard
+** Scalability
+- Increased Load
+- Provisioning
+- Partitioning / Sharding
+** Trade-Offs
+- Cost / Performance
+- Consistency / Availability
+** Security
+- AuthN
+- AuthZ / Rate limiting
+- Rate limiting
+** Characteristics
+- Scalability
+- Availability
+- Reliability
+- Maintainability
