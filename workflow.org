@@ -1,0 +1,14 @@
+* Blog publishing workflow
+** Current
+- Write it in org mode
+- M-x org-md-export-to-md
+- Add the date prefix as YYYY-MM-DD-blog-name.md
+- Manually add the header section in markdown file
+- Manually move to `posts` directory
+
+** Possibilities
+- https://github.com/peterewills/ox-jekyll-lite
+- https://randomgeekery.org/post/2014/10/blog-writing-in-org-mode/
+- https://themkat.net/2024/10/22/how_i_blog_with_emacs.html
+- https://francopasut.github.io/blog/toc-jekyll/
+- https://carl.ac/blogging-with-emacs-org-github-pages/
