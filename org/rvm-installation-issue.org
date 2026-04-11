@@ -1,0 +1,129 @@
+#+TITLE: RVM / Ruby Installation Issue with OpenSSL on macOS
+#+DATE: 2026-04-11
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: debugging
+#+JEKYLL_TAGS: debugging installation ruby rvm mac openssl
+#+OPTIONS: toc:2 num:2
+* RVM / Ruby Installation Issue with OpenSSL on macOS
+** Introduction
+Setting up Ruby with RVM on modern macOS feels deceptively simple until it isn’t. I ran into an issue involving OpenSSL while trying to
+install the latest Ruby. This post documents the problem, failed attempts, and the eventual fix. I hope this saves you a few hours of debugging.
+** The Goal
+- Install the latest version of RVM
+- Install the latest Ruby (3.4.x at the time of writing)
+** My Environment
+#+begin_src shell
+$ brew config
+HOMEBREW_VERSION: 5.1.5
+Branch: stable
+HOMEBREW_EDITOR: emacsclient
+HOMEBREW_PREFIX: /opt/homebrew
+macOS: # macOS Tahoe
+Rosetta 2: false
+#+end_src
+** Initial Installation
+Following the official [[https://rvm.io/rvm/install][RVM Installation Guide]]
+#+begin_src shell
+# Import GPG keys
+$ curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+$ curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+
+# Install RVM + latest Ruby
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+#+end_src
+** Roadblock
+The installation failed with an unexpected dependency on openssl@1.1:
+#+begin_src shell
+$ brew install automake libtool pkg-config coreutils zlib openssl@1.1 --force
+
+Warning: No available formula with the name "openssl@1.1".
+Did you mean openssl@3?
+#+end_src
+** Understanding the Problem
+*** How RVM Works
+- Checks for precompiled Ruby binaries:
+  #+begin_src shell
+  $ rvm list known
+  #+end_src
+- Falls back to compiling from source if needed
+- Installs dependencies via Homebrew
+*** Ruby ↔ OpenSSL Compatibility
+|--------------+------------------------|
+| Ruby Version | OpenSSL Dependency     |
+|--------------+------------------------|
+| < 3.0        | openssl@1.0            |
+| >= 3.1       | Works with openssl@3.x |
+|--------------+------------------------|
+** Steps I Tried (That Didn’t Work)
+*** Install latest OpenSSL
+#+begin_src shell
+$ brew install openssl
+#+end_src
+
+*** Explicit OpenSSL path
+#+begin_src shell
+$ rvm install 3.4.9 --with-openssl-dir=$(brew --prefix openssl)
+#+end_src
+
+*** Configure PKG CONFIG PATH
+#+begin_src shell
+$ brew install pkg-config
+$ export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
+$ rvm install 3.4.9 --with-openssl-dir=$(brew --prefix openssl)
+#+end_src
+
+*** Try reinstalling RVM
+#+begin_src shell
+$ rm -rf ~/.rvm
+
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+rvm install 3.4.9
+#+end_src
+
+*** Cleanup Environment Variables
+- Removed stale PATH
+- Cleaned PKG_CONFIG_PATH
+- Cleaned LD_LIBRARY_PATH
+
+None of these approaches resolved the issue.
+
+** The Breakthrough
+#+begin_src shell
+requirements_osx_brew_libs_install ... openssl@1.1
+#+end_src
+*** Root Cause
+- RVM autolibs tries to manage dependencies automatically
+- Misidentifies newer macOS versions
+- Falls back to legacy rules requiring openssl@1.1
+
+** The Fix
+Disable autolibs and install dependencies manually
+
+#+begin_src shell
+$ rvm autolibs disable
+
+$ brew install automake libtool pkg-config coreutils zlib openssl
+
+$ rvm install 3.4.9 --with-openssl-dir=$(brew --prefix openssl)
+#+end_src
+
+This resolves the issue successfully.
+
+** Key Takeaways
+- Debugging with LLM is fun. They are highly useful for exploration but still requires manual validation
+- The devil is in the details. Good log messages are still the fastest path to the root cause
+- Timeboxing debugging sessions helps avoid fatigue
+- RVM autolibs can misbehave on newer macOS versions
+- Ruby >= 3.1 works well with OpenSSL 3
+** When You Still Need OpenSSL 1.1
+- Legacy Ruby versions (< 3.0)
+- Older applications with strict dependencies
+
+These setups require manual installation and linking of older OpenSSL versions.
+
+** Final Thoughts
+This was a great reminder:
+#+begin_quote
+The problem is rarely where you first look.
+#+end_quote
+Understanding and questioning system assumptions is often more valuable than repeatedly retrying commands.
