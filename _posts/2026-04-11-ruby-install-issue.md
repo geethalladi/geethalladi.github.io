@@ -1,5 +1,5 @@
 ---
-title: "RVM / Ruby Installation Issue with OpenSSL on macOS"
+title: "RVM / ruby install with OpenSSL 3.0 in mac"
 date: 2026-04-11
 layout: post
 categories:
@@ -15,25 +15,18 @@ tags:
 
 # Table of Contents
 
-1.  [RVM / Ruby Installation Issue with OpenSSL on macOS](#org0938d01)
-    1.  [Introduction](#org080f5bf)
-    2.  [The Goal](#orgbb7bf79)
-    3.  [My Environment](#org164ca45)
-    4.  [Initial Installation](#orgcea33da)
-    5.  [Roadblock](#orgc2fd175)
-    6.  [Understanding the Problem](#org8b549e8)
-    7.  [Steps I Tried (That Didn’t Work)](#org918dd9c)
-    8.  [The Breakthrough](#orgf7de78c)
-    9.  [The Fix](#org6956684)
-    10. [Key Takeaways](#orgc99f31d)
-    11. [When You Still Need OpenSSL 1.1](#orgbca1b33)
-    12. [Final Thoughts](#org0856407)
-
-
-
-<a id="org0938d01"></a>
-
-# RVM / Ruby Installation Issue with OpenSSL on macOS
+1.  [Introduction](#org080f5bf)
+2.  [The Goal](#orgbb7bf79)
+3.  [My Environment](#org164ca45)
+4.  [Initial Installation](#orgcea33da)
+5.  [Roadblock](#orgc2fd175)
+6.  [Understanding the Problem](#org8b549e8)
+7.  [Steps I Tried (That Didn’t Work)](#org918dd9c)
+8.  [The Breakthrough](#orgf7de78c)
+9.  [The Fix](#org6956684)
+10. [Key Takeaways](#orgc99f31d)
+11. [When You Still Need OpenSSL 1.1](#orgbca1b33)
+12. [Final Thoughts](#org0856407)
 
 
 <a id="org080f5bf"></a>
@@ -168,8 +161,8 @@ The installation failed with an unexpected dependency on openssl@1.1:
 ### Cleanup Environment Variables
 
 -   Removed stale PATH
--   Cleaned PKG<sub>CONFIG</sub><sub>PATH</sub>
--   Cleaned LD<sub>LIBRARY</sub><sub>PATH</sub>
+-   Cleaned PKG_CONFIG_PATH
+-   Cleaned LD_LIBRARY_PATH
 
 None of these approaches resolved the issue.
 
