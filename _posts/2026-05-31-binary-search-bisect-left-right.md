@@ -40,7 +40,7 @@ Understanding the thought process behind `bisect_left` and `bisect_right` — wh
 
 ## Why binary search?
 
-Linear search scans every element in O(n). Binary search exploits sorted order to reduce the run time to O(log n). That's the difference between scanning a million records and needing at most 20 comparisons. It's also the idea powering B-tree indexes in most databases.
+Linear search scans every element in `O(n)`. Binary search exploits sorted order to reduce the run time to `O(log n)`. That's the difference between scanning a million records and needing at most 20 comparisons. It's also the idea powering B-tree indexes in most databases.
 
 Use binary search whenever your data is sorted and you need fast lookups, range queries, or insertion-point finding.
 
@@ -81,7 +81,7 @@ This returns *some* index when a match is found. That's fine for unique elements
 
 ### Invariants
 
--   Returns position `i` such that `a[:i] < key` and `a[i:] >=` key
+-   Returns position `i` such that `a[:i] < key` and `a[i:] >= key`
 -   If key is present, `i` points to its **leftmost** copy
 -   Return range: `[0, len(a)]` — can return an index past the end
 
@@ -109,7 +109,7 @@ This returns *some* index when a match is found. That's fine for unique elements
 
 ### Invariants
 
--   Returns position `i` such that `a[:i] <=` key and `a[i:] > key`
+-   Returns position `i` such that `a[:i] <= key` and `a[i:] > key`
 -   Never points to the key itself — always one position *after* it
 -   Return range: `[0, len(a)]`
 
@@ -139,11 +139,11 @@ This returns *some* index when a match is found. That's fine for unique elements
 
 -   Finding the **first** occurrence of a value
 -   Insertion point that preserves order, placing equal keys to the left
--   Counting elements strictly less than a value: `bisect_left(a, key)` gives the count
+-   Counting elements strictly less than a value: `bisect_left(xs, key)` gives the count
 
 
 ### bisect\_right
 
 -   Finding the **last** occurrence of a value
 -   Insertion point that places equal keys to the right
--   Counting elements less than or equal to a value: `bisect_right(a, key)` gives the count
+-   Counting elements less than or equal to a value: `bisect_right(xs, key)` gives the count
