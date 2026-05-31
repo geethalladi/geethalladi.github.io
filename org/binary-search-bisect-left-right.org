@@ -1,0 +1,71 @@
+#+OPTIONS: toc:2 num:2 html-postamble:nil ^:nil
+* Binary Search / bisect
+This post is trying to understand binary search and thought process around using bisect left and right
+** Binary Search
+- Used to search a sorted list of numbers
+- Reduces the complexity from O(n) to O(lgn)
+- "The Algorithm" that powers most databases for faster retrieval
+
+*** Naive Implementation in Python
+#+begin_src python
+  def binary_search(xs, key):
+      if (not xs) or (not key):
+          return -1
+      left, right = 0, len(xs) - 1
+      while left <= right:
+          mid = (left + right) // 2
+          if xs[mid] == key:
+              return mid
+          elif xs[mid] < key:
+              left = mid + 1
+          else:
+              right = mid - 1
+      return -1
+
+  xs = [1, 2, 3, 4, 5]
+  assert binary_search(xs, 7) == -1
+  assert binary_search(xs, 5) == 4
+  assert binary_search(xs, 1) == 0
+#+end_src
+
+** mental model for "bisect_left"
+*** Invariants
+- bisect left returns the key if found (left most occurrence)
+- Works such that (a[:i] < key, a[i:] >= key)
+- Return value [0, len(a)]
+
+*** bisect for binary search / left most occurrence
+#+begin_src python
+  from bisect import bisect_left
+
+  def left_most_search(a, key):
+      i = bisect_left(a, key)
+      if len(a) <= i or a[i] != key:
+          return -1
+      return i
+
+  xs = [1, 2, 2, 2, 3, 4, 5]
+  assert left_most_search(xs, 2) == 1
+  assert left_most_search(xs, 3) == 4
+#+end_src
+
+** mental model for bisect_right
+*** Invariants
+- bisect right never returns the key even if present
+- (a[:i] <= key, a[i:] > key)
+- Return value [0, len(a)]
+
+*** right most occurrence
+#+begin_src python
+  from bisect import bisect_right
+
+  def right_most_search(a, key):
+      i = bisect_right(a, key)
+      if i == 0 or a[i-1] != key:
+          return -1
+      return i-1
+
+  xs = [1, 2, 2, 2, 3, 4, 5]
+  assert right_most_search(xs, 1) == 0
+  assert right_most_search(xs, 2) == 3
+#+end_src
