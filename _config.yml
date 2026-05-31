@@ -29,7 +29,13 @@ nav:
     url: /tags/
 
 # Build settings
+highlighter: rouge
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 theme: minima
 gems:
   - jekyll-feed

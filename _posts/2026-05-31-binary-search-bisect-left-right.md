@@ -44,13 +44,12 @@ Linear search scans every element in `O(n)`. Binary search exploits sorted order
 
 Use binary search whenever your data is sorted and you need fast lookups, range queries, or insertion-point finding.
 
-
 <a id="org02a3586"></a>
 
 ## Naive implementation
 
 The following is a classic "book" implementation of the algorithm which returns an index if found, `-1` otherwise.
-
+```python
     def binary_search(xs, key):
         if not xs or key is None:
             return -1
@@ -69,6 +68,7 @@ The following is a classic "book" implementation of the algorithm which returns 
     assert binary_search(xs, 7) == -1
     assert binary_search(xs, 5) == 4
     assert binary_search(xs, 1) == 0
+```
 
 This returns *some* index when a match is found. That's fine for unique elements, but falls apart with duplicates. Enter
 [bisect module](https://docs.python.org/3/library/bisect.html) included in the [Python Standard library](https://docs.python.org/3/library/index.html).
@@ -87,7 +87,7 @@ This returns *some* index when a match is found. That's fine for unique elements
 
 
 ### Implementation
-
+```python
     from bisect import bisect_left
 
     def left_most_search(a, key):
@@ -100,7 +100,7 @@ This returns *some* index when a match is found. That's fine for unique elements
     assert left_most_search(xs, 2) == 1
     assert left_most_search(xs, 3) == 4
     assert left_most_search(xs, 9) == -1
-
+```
 
 <a id="org549604b"></a>
 
@@ -116,6 +116,7 @@ This returns *some* index when a match is found. That's fine for unique elements
 
 ### Implementation
 
+```python
     from bisect import bisect_right
 
     def right_most_search(a, key):
@@ -128,7 +129,7 @@ This returns *some* index when a match is found. That's fine for unique elements
     assert right_most_search(xs, 2) == 3
     assert right_most_search(xs, 1) == 0
     assert right_most_search(xs, 9) == -1
-
+```
 
 <a id="org3c67372"></a>
 
