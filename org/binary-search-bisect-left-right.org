@@ -1,7 +1,7 @@
 #+TITLE: Binary Search & Python's bisect module
 #+DATE: 2026-05-31
 #+JEKYLL_LAYOUT: post
-#+JEKYLL_CATEGORIES: search
+#+JEKYLL_CATEGORIES: algorithms
 #+JEKYLL_TAGS: binary_search sorted python algorithms
 #+OPTIONS: toc:2 num:2 ^:nil
 * Binary Search & Python's bisect module
