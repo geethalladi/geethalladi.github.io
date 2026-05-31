@@ -1,71 +1,95 @@
-#+OPTIONS: toc:2 num:2 html-postamble:nil ^:nil
-* Binary Search / bisect
-This post is trying to understand binary search and thought process around using bisect left and right
-** Binary Search
-- Used to search a sorted list of numbers
-- Reduces the complexity from O(n) to O(lgn)
-- "The Algorithm" that powers most databases for faster retrieval
+#+TITLE: Binary Search & Python's bisect module
+#+DATE: 2026-05-31
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: search
+#+JEKYLL_TAGS: binary_search sorted python algorithms
+#+OPTIONS: toc:2 num:2 ^:nil
+* Binary Search & Python's bisect module
+** Introduction
+Understanding the thought process behind =bisect_left= and =bisect_right= — when to use each and why.
+** Why binary search?
+Linear search scans every element in O(n). Binary search exploits sorted order to reduce the run time to O(log n). That's the difference between scanning a million records and needing at most 20 comparisons. It's also the idea powering B-tree indexes in most databases.
 
-*** Naive Implementation in Python
+Use binary search whenever your data is sorted and you need fast lookups, range queries, or insertion-point finding.
+
+** Naive implementation
+The following is a classic "book" implementation of the algorithm which returns an index if found, =-1= otherwise.
+
 #+begin_src python
-  def binary_search(xs, key):
-      if (not xs) or (not key):
-          return -1
-      left, right = 0, len(xs) - 1
-      while left <= right:
-          mid = (left + right) // 2
-          if xs[mid] == key:
-              return mid
-          elif xs[mid] < key:
-              left = mid + 1
-          else:
-              right = mid - 1
-      return -1
+def binary_search(xs, key):
+    if not xs or key is None:
+        return -1
+    left, right = 0, len(xs) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if xs[mid] == key:
+            return mid
+        elif xs[mid] < key:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
 
-  xs = [1, 2, 3, 4, 5]
-  assert binary_search(xs, 7) == -1
-  assert binary_search(xs, 5) == 4
-  assert binary_search(xs, 1) == 0
+xs = [1, 2, 3, 4, 5]
+assert binary_search(xs, 7) == -1
+assert binary_search(xs, 5) == 4
+assert binary_search(xs, 1) == 0
 #+end_src
 
-** mental model for "bisect_left"
+This returns /some/ index when a match is found. That's fine for unique elements, but falls apart with duplicates. Enter
+[[https://docs.python.org/3/library/bisect.html][bisect module]] included in the [[https://docs.python.org/3/library/index.html][Python Standard library]].
+
+** bisect_left — leftmost occurrence
 *** Invariants
-- bisect left returns the key if found (left most occurrence)
-- Works such that (a[:i] < key, a[i:] >= key)
-- Return value [0, len(a)]
+- Returns position =i= such that =a[:i] < key= and =a[i:] >== key
+- If key is present, =i= points to its *leftmost* copy
+- Return range: =[0, len(a)]= — can return an index past the end
 
-*** bisect for binary search / left most occurrence
+*** Implementation
 #+begin_src python
-  from bisect import bisect_left
+from bisect import bisect_left
 
-  def left_most_search(a, key):
-      i = bisect_left(a, key)
-      if len(a) <= i or a[i] != key:
-          return -1
-      return i
+def left_most_search(a, key):
+    i = bisect_left(a, key)
+    if i >= len(a) or a[i] != key:  # bounds check first!
+        return -1
+    return i
 
-  xs = [1, 2, 2, 2, 3, 4, 5]
-  assert left_most_search(xs, 2) == 1
-  assert left_most_search(xs, 3) == 4
+xs = [1, 2, 2, 2, 3, 4, 5]
+assert left_most_search(xs, 2) == 1
+assert left_most_search(xs, 3) == 4
+assert left_most_search(xs, 9) == -1
 #+end_src
 
-** mental model for bisect_right
+** bisect_right — rightmost occurrence
 *** Invariants
-- bisect right never returns the key even if present
-- (a[:i] <= key, a[i:] > key)
-- Return value [0, len(a)]
+- Returns position =i= such that =a[:i] <== key and =a[i:] > key=
+- Never points to the key itself — always one position /after/ it
+- Return range: =[0, len(a)]=
 
-*** right most occurrence
+*** Implementation
 #+begin_src python
-  from bisect import bisect_right
+from bisect import bisect_right
 
-  def right_most_search(a, key):
-      i = bisect_right(a, key)
-      if i == 0 or a[i-1] != key:
-          return -1
-      return i-1
+def right_most_search(a, key):
+    i = bisect_right(a, key)
+    if i == 0 or a[i - 1] != key:
+        return -1
+    return i - 1
 
-  xs = [1, 2, 2, 2, 3, 4, 5]
-  assert right_most_search(xs, 1) == 0
-  assert right_most_search(xs, 2) == 3
+xs = [1, 2, 2, 2, 3, 4, 5]
+assert right_most_search(xs, 2) == 3
+assert right_most_search(xs, 1) == 0
+assert right_most_search(xs, 9) == -1
 #+end_src
+
+** When to use which
+*** bisect_left
+- Finding the *first* occurrence of a value
+- Insertion point that preserves order, placing equal keys to the left
+- Counting elements strictly less than a value: =bisect_left(a, key)= gives the count
+
+*** bisect_right
+- Finding the *last* occurrence of a value
+- Insertion point that places equal keys to the right
+- Counting elements less than or equal to a value: =bisect_right(a, key)= gives the count
