@@ -1,0 +1,53 @@
+#+TITLE: Leveraging Python
+#+DATE: 2026-05-31
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: python
+#+JEKYLL_TAGS: learn leverage python
+#+OPTIONS: toc:2 num:2 ^:nil
+* Leveraging Python
+** Introduction
+- Python as a dynamic language enables faster development time
+- Rich set of libraries with batteries included makes it a great tool with high pedantic value
+- We can use it to learn a new topics in a structured manner
+** Topics
+The following are a list of topics (most of them still in progress) for which I used Python to move from second order ignorance (Unknown Unknowns) to first order ignorance (Known Unknowns).
+*** Observability
+**** Prometheus
+**** Distributed Tracing
+**** Grafana / Loki Clients
+*** AI / Agents
+**** Agentic SDK
+- Crew.ai
+- Langchain and LangGraph
+**** LLM API SDK
+**** MCP Client
+*** Storage / Query Layer
+**** Postgres Features using python
+**** Redis Client
+**** Graph Database
+**** SQL alchemy / ORM
+**** Vector Databases
+**** Elastic Search SDK
+**** Timeseries DB
+**** Object Store Integration
+- S3
+*** Integration
+**** Asynchronous / Event Driven
+**** Stream Processing
+**** Batch Jobs Framework
+- Celery
+**** Reactive Programming
+*** Approximations / Uncertainty
+**** Knowledge Graph
+**** Probabilistic Data Structures
+*** Data and Computation
+**** Graph Algorithms
+**** Matrix / Vector Operations
+*** Protocols
+**** Graph QL
+**** gRPC / ProtoBuf
+**** Websockets
+** Conclusion
+- Python is a great vehicle for "101" style learnings
+- The good documentation support available for these libraries and SDKs, enables to "deep dive" in these topics when a need arises.
+- Do share your experience in using a Production quality to accelearate your learnings
