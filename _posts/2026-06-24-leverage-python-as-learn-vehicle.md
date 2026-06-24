@@ -34,7 +34,7 @@ There is a well-known taxonomy of ignorance.
 </tr>
 
 <tr>
-<td class="org-left">Known unknowns</td>
+<td class="org-left"><i>Known unknowns</i></td>
 <td class="org-left">you are aware of but have not yet mastered</td>
 <td class="org-left">More tractable. You can read, experiment, and ask for help</td>
 </tr>
