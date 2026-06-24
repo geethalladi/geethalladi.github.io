@@ -10,21 +10,6 @@ tags:
 - leverage
 - python
 ---
-
-# Table of Contents
-
-1.  [Leveraging Python as a Learning Vehicle](#org4ee88de)
-    1.  [Introduction](#orgd40ec5e)
-    2.  [Topics Explored](#org698a7a4)
-    3.  [Conclusion](#orga2af6d7)
-
-
-
-<a id="org4ee88de"></a>
-
-# Leveraging Python as a Learning Vehicle
-
-
 <a id="orgd40ec5e"></a>
 
 ## Introduction
