@@ -43,9 +43,9 @@ There is a well-known taxonomy of ignorance.
 
 Python has become my preferred tool for collapsing that first gap: moving from not knowing a topic exists to having a working mental model of it. The following properties make it particularly well-suited for this role.
 
--   **Low ceremony** Python's syntax stays out of the way. You can spin up an experiment in a few lines without wrestling with build systems or boilerplate
--   **Batteries included** The standard library covers a surprising amount of ground, and the broader ecosystem extends almost every domain imaginable
--   **First-class documentation culture** Most mature Python libraries ship with tutorials, API references, and worked examples. The distance from "install" to "first meaningful result" is often measured in just a few minutes
+-   **Low ceremony** — Python's syntax stays out of the way. You can spin up an experiment in a few lines without wrestling with build systems or boilerplate
+-   **Batteries included** — The standard library covers a surprising amount of ground, and the broader ecosystem extends almost every domain imaginable
+-   **First-class documentation culture** — Most mature Python libraries ship with tutorials, API references, and worked examples. The distance from "install" to "first meaningful result" is often measured in just a few minutes
 
 Taken together, these properties make Python a perfect vehicle for structured, exploratory learning across a wide range of topics.
 
@@ -70,11 +70,9 @@ Understanding what a system is doing in production requires more than logs. Pyth
 
 The agent and LLM space is evolving rapidly, and Python is where most of it is happening.
 
-**Agentic frameworks** such as Crew.ai and LangChain / LangGraph let you compose multi-step reasoning pipelines and explore patterns like tool use, memory, and reflection without implementing them from scratch.
-
-**LLM API SDKs** provided a ground level understanding of prompt construction, token budgeting, and streaming responses.
-
-**MCP (Model Context Protocol) clients** surfaced the emerging conventions for giving models structured access to external tools and data sources.
+-   **Agentic frameworks** such as Crew.ai and LangChain / LangGraph let you compose multi-step reasoning pipelines and explore patterns like tool use, memory, and reflection without implementing them from scratch.
+-   **LLM API SDKs** provided a ground level understanding of prompt construction, token budgeting, and streaming responses.
+-   **MCP (Model Context Protocol) clients** surfaced the emerging conventions for giving models structured access to external tools and data sources.
 
 
 ### Storage and Query Layer
