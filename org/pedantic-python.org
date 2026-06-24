@@ -1,53 +1,91 @@
-#+TITLE: Leveraging Python
-#+DATE: 2026-05-31
+#+TITLE: Leveraging Python as a Learning Vehicle
+#+DATE: <2026-06-24 Wed>
+#+AUTHOR:
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: python
 #+JEKYLL_TAGS: learn leverage python
 #+OPTIONS: toc:2 num:2 ^:nil
-* Leveraging Python
+#+DESCRIPTION: How Python's expressive syntax and rich ecosystem make it the ideal companion for moving from second order ignorance to first order ignorance
+* Leveraging Python as a Learning Vehicle
 ** Introduction
-- Python as a dynamic language enables faster development time
-- Rich set of libraries with batteries included makes it a great tool with high pedantic value
-- We can use it to learn a new topics in a structured manner
-** Topics
-The following are a list of topics (most of them still in progress) for which I used Python to move from second order ignorance (Unknown Unknowns) to first order ignorance (Known Unknowns).
+There is a well-known taxonomy of ignorance.
+
+|------------------+--------------------------------------------+---------------------------------------------------------------------------|
+| /Unknown unknowns/ | you do not know you do not know            | Hardest to overcome, because you cannot even formulate the right question |
+| Known unknowns   | you are aware of but have not yet mastered | More tractable. You can read, experiment, and ask for help                |
+|------------------+--------------------------------------------+---------------------------------------------------------------------------|
+Python has become my preferred tool for collapsing that first gap: moving from not knowing a topic exists to having a working mental model of it. The following properties make it particularly well-suited for this role.
+
+- *Low ceremony* Python's syntax stays out of the way. You can spin up an experiment in a few lines without wrestling with build systems or boilerplate
+- *Batteries included* The standard library covers a surprising amount of ground, and the broader ecosystem extends almost every domain imaginable
+- *First-class documentation culture* Most mature Python libraries ship with tutorials, API references, and worked examples. The distance from "install" to "first meaningful result" is often measured in just a few minutes
+
+Taken together, these properties make Python a perfect vehicle for structured, exploratory learning across a wide range of topics.
+
+** Topics Explored
+The sections below catalogue the areas where I have used Python to move from second-order ignorance to first-order ignorance. Many are still in progress. The point here is not about mastery, but orientation.
+
 *** Observability
-**** Prometheus
-**** Distributed Tracing
-**** Grafana / Loki Clients
+Understanding what a system is doing in production requires more than logs. Python clients for the following tools gave me hands-on exposure to the full observability stack.
+
+- *Prometheus* — instrumenting code with counters, gauges, and histograms; scraping and querying metrics.
+- *Distributed Tracing* — propagating trace context across service boundaries; visualising latency waterfalls.
+- *Grafana / Loki clients* — shipping structured logs, building dashboards, and correlating traces with log lines.
+
 *** AI / Agents
-**** Agentic SDK
-- Crew.ai
-- Langchain and LangGraph
-**** LLM API SDK
-**** MCP Client
-*** Storage / Query Layer
-**** Postgres Features using python
-**** Redis Client
-**** Graph Database
-**** SQL alchemy / ORM
-**** Vector Databases
-**** Elastic Search SDK
-**** Timeseries DB
-**** Object Store Integration
-- S3
-*** Integration
-**** Asynchronous / Event Driven
-**** Stream Processing
-**** Batch Jobs Framework
-- Celery
-**** Reactive Programming
-*** Approximations / Uncertainty
-**** Knowledge Graph
-**** Probabilistic Data Structures
+The agent and LLM space is evolving rapidly, and Python is where most of it is happening.
+
+*Agentic frameworks* such as Crew.ai and LangChain / LangGraph let you compose multi-step reasoning pipelines and explore patterns like tool use, memory, and reflection without implementing them from scratch.
+
+*LLM API SDKs* provided a ground-level understanding of prompt construction, token budgeting, and streaming responses.
+
+*MCP (Model Context Protocol) clients* surfaced the emerging conventions for giving models structured access to external tools and data sources.
+
+*** Storage and Query Layer
+Persistence is never just "pick a database." Each storage primitive carries its own query model, consistency guarantees, and operational character.
+
+| Technology          | Key concepts                                                       |
+|---------------------+--------------------------------------------------------------------|
+| Postgres            | Advanced features — JSONB, CTEs, window functions, Semantic Search |
+| Redis               | Data structures, pub/sub, caching patterns                         |
+| Graph databases     | Property graphs, Cypher, traversal queries                         |
+| SQLAlchemy / ORM    | Declarative models, migrations, session lifecycle                  |
+| Vector databases    | Embedding storage, similarity search, ANN indexes, HNSW, IVFFlat   |
+| Elasticsearch SDK   | Full-text search, relevance tuning, aggregations                   |
+| Time-series DBs     | Downsampling, retention policies, range queries                    |
+| Object storage (S3) | Presigned URLs, multipart uploads, lifecycle rules                 |
+
+*** Integration Patterns
+How services talk to each other matters as much as what they say.
+
+- *Asynchronous / event-driven* — decoupling producers from consumers; understanding back-pressure and delivery guarantees.
+- *Stream processing* — transforming and aggregating data in motion rather than at rest.
+- *Batch job frameworks (e.g. Celery)* — scheduling, retrying, and monitoring long-running background workloads.
+- *Reactive programming* — composing event streams with operators like map, filter, and merge.
+
+*** Approximations and Uncertainty
+
+Not every problem calls for an exact answer. Some domains reward embracing uncertainty explicitly.
+
+- *Knowledge graphs* — representing entities and relationships in a form that supports inference and discovery.
+- *Probabilistic data structures* — Bloom filters, HyperLogLog, Count-Min Sketch: trading precision for dramatic space and time savings. Leveraging uncertainty for the greater good
+
 *** Data and Computation
-**** Graph Algorithms
-**** Matrix / Vector Operations
+A short detour into the numerical and algorithmic foundations that underpin much of the above.
+
+- *Graph algorithms* — BFS, DFS, shortest paths, connected components; recognising when a problem has graph like structure
+- *Matrix and vector operations* — NumPy / Pytorch idioms, broadcasting, and the linear algebra that sits beneath machine learning and search
+
 *** Protocols
-**** Graph QL
-**** gRPC / ProtoBuf
-**** Websockets
+Wire protocols are the contracts between systems. Reading and writing them directly removes a layer of abstraction that can otherwise obscure what is actually happening.
+
+- *GraphQL* — schema design, resolvers, and the N+1 query problem.
+- *gRPC / Protocol Buffers* — strongly typed service contracts, code generation, and streaming RPCs.
+- *WebSockets* — full-duplex communication, connection lifecycle, and real-time push patterns.
+
 ** Conclusion
-- Python is a great vehicle for "101" style learnings
-- The good documentation support available for these libraries and SDKs, enables to "deep dive" in these topics when a need arises.
-- Do share your experience in using a Production quality to accelearate your learnings
+Python is not the best language for every problem, but it is hard to beat as a /learning language/. Its expressiveness keeps the focus on the concept rather than the syntax. Its ecosystem means you rarely have to build from scratch to get to the interesting part. The quality of documentation across the libraries listed above is genuinely excellent.
+
+The pattern I have found most valuable: use Python to get a working toy example running, then follow the documentation deeper when a real need arises. The toy gives you the vocabulary; the documentation gives you the depth.
+
+If you have used a production-quality library or SDK to accelerate your own learning in any of these areas, I would love to hear what worked for you.
