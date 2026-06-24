@@ -87,7 +87,7 @@ The agent and LLM space is evolving rapidly, and Python is where most of it is h
 
 **Agentic frameworks** such as Crew.ai and LangChain / LangGraph let you compose multi-step reasoning pipelines and explore patterns like tool use, memory, and reflection without implementing them from scratch.
 
-**LLM API SDKs** provided a ground-level understanding of prompt construction, token budgeting, and streaming responses.
+**LLM API SDKs** provided a ground level understanding of prompt construction, token budgeting, and streaming responses.
 
 **MCP (Model Context Protocol) clients** surfaced the emerging conventions for giving models structured access to external tools and data sources.
 
@@ -195,6 +195,6 @@ Wire protocols are the contracts between systems. Reading and writing them direc
 
 Python is not the best language for every problem, but it is hard to beat as a *learning language*. Its expressiveness keeps the focus on the concept rather than the syntax. Its ecosystem means you rarely have to build from scratch to get to the interesting part. The quality of documentation across the libraries listed above is genuinely excellent.
 
-The pattern I have found most valuable: use Python to get a working toy example running, then follow the documentation deeper when a real need arises. The toy gives you the vocabulary; the documentation gives you the depth.
+The pattern I have found most valuable: use Python to get a working toy example running, then follow the documentation deeper when a real need arises. The toy gives you the vocabulary and the documentation gives you the depth.
 
 If you have used a production-quality library or SDK to accelerate your own learning in any of these areas, I would love to hear what worked for you.
