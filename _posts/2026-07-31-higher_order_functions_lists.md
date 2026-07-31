@@ -26,7 +26,7 @@ tags:
 
 # Introduction
 
-Most application functions touches a list that is doing one of the following three things
+Most functions that touches a list does one of the following things
 
 -   Ask a question about every element
 -   Transforming every element
@@ -42,20 +42,15 @@ This first part sticks to the idioms Python gives you out of the box for lists: 
 # Why higher order functions
 
 A **higher order function** is simply a function that takes another function as an argument, returns a function, or both. `map`, `filter`, `sorted` and
-`reduce` are all higher order functions. The following are the advantages of leaning on them
+`reduce` are all higher order functions. The following are some of the advantages of leaning on them
 
 -   **Concise**: intent fits on one line instead of five.
 -   **Readable**: `all(...)` says "every one of these holds" far more directly than a loop with an early `return False`.
--   **Easier to debug**: known idioms have known failure modes. A reader (and future you) can skip past `max(xs)` without checking it for off-by-one bugs.
-
-**- Immutable-friendly**: expressions produce new values instead of mutating an accumulator in place, so there is no half-updated intermediate state to
-  reason about. This in turn favors concurrent execution
-
--   **Unix-flavoured composition**: write small functions that each do one thing well, then wire them together to get the behaviour the application actually
-    needs. The pipeline, not the function, is where the application lives.
+-   **Easier to debug**: known idioms have known failure modes. Any reader (could be you in future) can skip past `max(xs)` without checking it for off-by-one bugs.
+-   **Immutable-friendly**: expressions produce new values instead of mutating an accumulator in place, so there is no half-updated intermediate state to reason about. This in turn favors concurrent execution.
+-   **Unix-flavoured composition**: write small functions that each do one thing well, then wire them together to get the behaviour the application actually needs. The pipeline, not the function, is where the application lives.
 
 That last point is the real one. The idioms below are the pipe operators of Python data code.
-
 
 <a id="org3558ff6"></a>
 
@@ -64,7 +59,7 @@ That last point is the real one. The idioms below are the pipe operators of Pyth
 
 <a id="orgd4474cf"></a>
 
-## `all` - does every element hold?
+## all - does every element hold?
 
 `all` returns `True` when every element is truthy
 
@@ -79,7 +74,7 @@ That last point is the real one. The idioms below are the pipe operators of Pyth
 
 <a id="org46822a8"></a>
 
-## `any` - does at least one element hold?
+## any - does at least one element hold?
 
 `any` returns `True` when any one element is truthy
 
@@ -102,7 +97,7 @@ Both functions short-circuit
 
 <a id="orgc21f5ea"></a>
 
-## `max` and `min` - the extremes in a list
+## max and min - the extremes in a list
 
 ```python
     xs = [3, 2, 4, 1, 5]
@@ -130,7 +125,7 @@ Both functions short-circuit
 
 # List Comprehensions: map and filter with nicer syntax
 
-Python has `map` and `filter` builtins, but comprehensions are the idiomatic spelling of both. Some sample data to work with:
+Python has `map` and `filter` builtins, but comprehensions are the idiomatic spelling of both. Some sample data to work with
 
 ```python
     from dataclasses import dataclass
@@ -150,7 +145,6 @@ Python has `map` and `filter` builtins, but comprehensions are the idiomatic spe
 <a id="org39857a6"></a>
 
 ## Map - transform every element
-
 
 ### Convert People to their names
 
@@ -194,7 +188,7 @@ Python has `map` and `filter` builtins, but comprehensions are the idiomatic spe
     # => [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
 ```
 
-Because `range(lo, hi)` excludes `hi`, starting the inner range at `x + 1` is what guarantees $x < y$ without a filter.
+Because `range(lo, hi)` excludes `hi`, starting the inner range at `x + 1` is what guarantees x < y without a filter.
 
 
 <a id="org469ba7b"></a>
@@ -202,7 +196,7 @@ Because `range(lo, hi)` excludes `hi`, starting the inner range at `x + 1` is wh
 ## Filter - keep only what matches
 
 ```python
-    hrs = [p.name for p in people if p.dept == "HR"]
+    hrs = [p.name for p in people if p.dept == 'HR']
     # => ['charlie']
 
     even_nums = [x for x in range(5) if x % 2 == 0]
@@ -241,7 +235,7 @@ If a builtin already names your fold like `sum`, `min`, `max`, `any`, `all`, `st
 
 <a id="orgee646e8"></a>
 
-# The walrus operator in list comprehensions
+# Walrus operator in list comprehensions
 
 A filter often needs the same computed value that the output expression needs. The naive version computes it twice
 
@@ -278,12 +272,12 @@ This pattern shines with `re.match`
 
 # Wrapping up
 
-The through-line of every idiom above is the same: name the shape of the computation instead of re-deriving it with an index and an accumulator.
+The through-line of every idiom above is the same: name the shape of the computation instead of writing it with an index and an accumulator.
 
--   `all` / `any` for questions over a whole collection, short-circuiting.
--   `max` / `min` with `key` and `default` for extremes.
--   Comprehensions for map and filter, including nested and dependent loops.
--   `reduce` for folds that no builtin already covers.
--   The walrus operator to avoid computing the same thing twice.
+-   `all` / `any` for questions over a whole collection, short-circuiting
+-   `max` / `min` with `key` and `default` for extremes
+-   Comprehensions for map and filter, including nested and dependent loops
+-   `reduce` for folds that no builtin already covers
+-   Walrus operator to avoid computing the same thing twice
 
 In the subsequent parts we'll go a level up: `hash maps`, `functools.partial` and `lru_cache`, the `itertools` toolkit, `sorted` with composite keys, decorators as function-returning functions, and how to build small pipelines out of functions you wrote yourself.
