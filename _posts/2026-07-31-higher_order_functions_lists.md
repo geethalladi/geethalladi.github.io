@@ -18,7 +18,7 @@ tags:
 2.  [Why higher order functions](#org505a743)
 3.  [Asking questions about a whole list](#org3558ff6)
 4.  [List Comprehensions: map and filter with nicer syntax](#org98cf257)
-5.  [Reduce — collapsing a list to one value](#orgc1c5d2b)
+5.  [Reduce - collapsing a list to one value](#orgc1c5d2b)
 6.  [The walrus operator in list comprehensions](#orgee646e8)
 7.  [Wrapping up](#org47e49b7)
 
