@@ -211,7 +211,7 @@ Because `range(lo, hi)` excludes `hi`, starting the inner range at `x + 1` is wh
 
 <a id="orgc1c5d2b"></a>
 
-# Reduce — collapsing a list to one value
+# Reduce - collapsing a list to one value
 
 `reduce` threads a two-argument function through the list, carrying an accumulator along
 
