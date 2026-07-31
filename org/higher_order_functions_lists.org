@@ -1,8 +1,9 @@
 * Higher Order Functions - (Part I)
-** Why
+** Why we need higher order functions
 - Short and concise
-- Clear and More readable
+- Clear and readable
 - Makes debugging easy - when we use the known idioms
+- Enables functional style of Programming with immutable values
 - Leveraging Unix Style Functions
   - Write Functions which do one thing well
   - Helps Wiring them to achieve what the application requires
