@@ -1,5 +1,5 @@
 ---
-title: "Foundational Learning"
+title: "Foundational Learning: Why reading fewer books is better"
 date: 2026-08-13
 layout: post
 description: "Why reading fewer books is better"
@@ -14,16 +14,13 @@ tags:
 
 # Table of Contents
 
-1.  [Foundational Learning: Why reading fewer Books is better](#org20d2147)
-    1.  [The Problem](#org1c6c119)
-    2.  [Why Foundational Learning Works](#orgf9d0b96)
-    3.  [The Books List](#orga211175)
-    4.  [What I Rediscovered](#org4844fa3)
+1.  [The Problem](#org1c6c119)
+2.  [Why Foundational Learning Works](#orgf9d0b96)
+3.  [The Books List](#orga211175)
+4.  [What I Rediscovered](#org4844fa3)
 
 
 <a id="org20d2147"></a>
-
-# Foundational Learning: Why reading fewer Books is better
 
 <a id="org1c6c119"></a>
 
