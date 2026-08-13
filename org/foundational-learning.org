@@ -1,0 +1,53 @@
+#+TITLE: Foundational Learning
+#+DATE: 2026-08-15
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: learn
+#+JEKYLL_TAGS: structured foundational pareto decisions
+* Foundational Learning
+** Importance
+*** Pareto Principle
+*** Lindy Effect
+*** Compounding
+*** Leverage
+** Foundational Books
+The categories are based where I spent my learning, day job and preferences
+*** Software Engineering
+- The C Programming language
+- Effective Java
+- Gang of Four
+- Designing Data Intensive Applications
+- Domain Driven Design
+- Computer Architecture - Patterson
+- Structure and Interpretation of Computer Programs
+- Release It
+- Introduction to Algorithms
+- The SRE Book
+*** AI
+- Hands on Machine Learning
+- AI Engineering
+*** Math
+- Godel Escher Bach
+- Understanding Probability
+- Linear Algebra done right - Axler
+*** Decision Making
+- Seeking Wisdom
+- Poor Charlie's Almanac
+- The Great Mental Models
+- Super Thinking
+*** Systems
+- Thinking in Systems
+- Antifragile
+- The Art of doing science and engineering
+*** History
+- Guns Germs and Steel
+*** Psychology
+- Influence by Robert Caldini
+- 48 laws of power
+*** Investment
+- The Psychology of Money
+** Conclusion
+- What I rediscovered over the years -> Pareto Principle and Lindy Effect
+- Reading these 20 % gave the needed 80 % percent of the knowledge and skill necessary to do work and make better decisions
+- These foundational learnings have longer half life, the time period after which half of the knowledge in the material
+  will  become stale)
+- My investment in these books compound well over time. I will build on top and don't have to re-learn an equivalent information again from scratch
