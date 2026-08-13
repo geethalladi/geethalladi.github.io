@@ -3,51 +3,75 @@
 #+JEKYLL_LAYOUT: post
 #+JEKYLL_CATEGORIES: learn
 #+JEKYLL_TAGS: structured foundational pareto decisions
-* Foundational Learning
-** Importance
-*** Pareto Principle
-*** Lindy Effect
-*** Compounding
-*** Leverage
-** Foundational Books
-The categories are based where I spent my learning, day job and preferences
+* Foundational Learning: Why Reading Fewer Books is better
+** The Problem
+Most professionals chase every new release, skim blog posts, and stack up half-finished books and courses. They mistake volume for learning. I personally did this for a few years before realizing a common pattern: a small set of books kept paying off long time after I read them.
+
+This post is about the small foundational set. Roughly 25 books across software engineering, math, decision-making, and systems thinking. I also explain why investing deeply in fewer texts beats skimming broadly across many.
+
+** Why Foundational Learning Works
+Three mental models explain why depth beats breadth here
+
+**The Pareto Principle:** A small fraction of books contain a disproportionate share of the knowledge we actually use at work. Not all reading is equal. Most of my practical engineering knowledge traces back to less than 20% of what I've read.
+
+**The Lindy Effect:** A book that has been relevant for 20 years is likely to remain relevant for another 20. Shakespeare's work has been there for centuries and will surely be there for a few more. Foundational material has a long half-life — the time it takes for half the knowledge to become
+outdated. Frameworks and tutorials go stale in few years, fundamentals won't.
+
+**Compounding:** Foundational knowledge doesn't just persist, they accumulate. Understanding data structures deeply doesn't just help once; it compounds every time you design a system, debug a performance issue, or evaluate a new tool. You build on top of it instead of re-learning them from scratch.
+
+The practical consequence: time spent on a very few foundational books returns more skill and better decisions over a career than the same time spread across dozens of surface-level reads.
+
+** The Books
+These categories reflect my work in building systems, infrastructure, applied AI, and a bias toward making better decisions. This is not a universal list. It's the set that I learned the most and which compounded for me. The filter was not just a "good book" but "Did this keep paying dividends years
+after I read it ?"
+
 *** Software Engineering
-- The C Programming language
-- Effective Java
-- Gang of Four
-- Designing Data Intensive Applications
-- Domain Driven Design
-- Computer Architecture - Patterson
-- Structure and Interpretation of Computer Programs
-- Release It
-- Introduction to Algorithms
-- The SRE Book
-*** AI
-- Hands on Machine Learning
-- AI Engineering
-*** Math
-- Godel Escher Bach
-- Understanding Probability
-- Linear Algebra done right - Axler
-*** Decision Making
-- Seeking Wisdom
-- Poor Charlie's Almanac
-- The Great Mental Models
-- Super Thinking
-*** Systems
-- Thinking in Systems
-- Antifragile
-- The Art of doing science and engineering
-*** History
-- Guns Germs and Steel
-*** Psychology
-- Influence by Robert Caldini
-- 48 laws of power
-*** Investment
-- The Psychology of Money
-** Conclusion
-- What I rediscovered over the years -> Pareto Principle and Lindy Effect
-- Reading these 20 % gave the needed 80 % percent of the knowledge and skill necessary to do work and make better decisions
-- These foundational learnings have longer half life, the time period after which half of the knowledge in the material
-  will  become stale)
-- My investment in these books compound well over time. I will build on top and don't have to re-learn an equivalent information again from scratch
+- Structure and Interpretation of Computer Programs, Abelson & Sussman
+- The C Programming Language, Kernighan & Ritchie
+- Effective Java, Joshua Bloch
+- Design Patterns, Gang of Four
+- Designing Data-Intensive Applications, Martin Kleppmann
+- Domain-Driven Design, Eric Evans
+- Computer Architecture: A Quantitative Approach, Hennessy & Patterson
+- Release It!, Nygard
+- Introduction to Algorithms, Cormen et al.
+- Site Reliability Engineering  Beyer et al.
+
+*** AI / Machine Learning
+- AI Engineering, Chip Huyen
+- Hands-On Machine Learning, Géron
+
+*** Mathematics
+- Gödel, Escher, Bach, Hofstadter
+- Understanding Probability, Henk Tijms
+- Linear Algebra Done Right, Axler
+
+*** Decision Making & Mental Models
+- Seeking Wisdom, Bevelin
+- Poor Charlie's Almanack, Munger
+- The Great Mental Models I-IV, Shane Parrish
+- Super Thinking, Weinberg & McCann
+- Influence, Robert Cialdini
+
+*** Systems Thinking
+- Thinking in Systems, Meadows
+- Antifragile, Taleb
+- The Art of Doing Science and Engineering, Hamming
+
+***  History & Context
+- Guns, Germs, and Steel, Jared Diamond
+- The Psychology of Money, Morgan Housel
+
+
+** What I Rediscovered
+After more than two decades of reading, the conclusion is the following
+
+- Pareto Principle:  Roughly 25 books provided the large majority of the skill and knowledge I actually apply at work and in making sound decisions
+
+- Lindy Effect: The oldest books on this list K&R, SICP, GEB are still the most useful. Even though they were written 30-40 years ago they are still relevant
+
+- Compounding: I don't have to re-learn these topics from scratch. Every new problem I encounter builds on top of what these books built. That's the real return on learning the fundamentals — not the first read, but every subsequent year where the knowledge keeps working.
+
+Start with these if your interests overlap with mine. If it doesn't, apply the same filter to your own domain. Identify the few valuable texts in your domain that have long half-lives and deep explanatory power. Focus your time and energy on reading those properly instead of chasing quantity.
+
+Depth in foundational knowledge compounds and yields great value.
