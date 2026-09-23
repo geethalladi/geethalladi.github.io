@@ -1,0 +1,46 @@
+* Topics
+** AI Coding + Comprehension Debt
+** Python Hash Map Recipes                                             :python:
+** Vector Database in                                                :postgres:
+** Python recipes for Competitive Programming                          :python:
+** Select / Filter / Group by in Python                                :python:
+** Newton / Ralphson Square root method visualization
+** Graph Lib + Topo Sort                                               :python:
+** AI / ML Learning Stack
+** Effectiveness of Mental Models
+** Journalling
+** jq / yq shortcuts
+** emacs jq integration
+** tmux / tmuxp
+** Unusual effectiveness of Wind down ritual
+** Using org mode pages in Github                                         :org:
+** Org mode benefits                                                    :emacs:
+** Tamil Writing in Emacs                                               :emacs:
+** Logseq journalling topics                                           :logseq:
+** Leadership Learning
+** Progression to Staff Engineer
+  collapsed:: true
+        - Tech -> [Business, Product, Domain, Customers]
+        - Going after solutions -> Going after the questions
+        - Making impression -> Bringing Clarity
+        - Stopping the flow -> Add momentum to the team
+** Unusual benefits of timebox
+** 7 chakras + Pranayamam
+** Elastic Search Internals                                             :books:
+** Deep Learning Experiment with #fast.ai
+** Learning #hugging-face tutorials
+** On #draw.io
+** Article on #projects/learner-app
+** Structured Thinking
+** Gradient descent
+** Observability Engineering                                            :books:
+** [[file:..//Users/galladi/Documents/pkms/pages/python tricks.org][Python Tricks]]                                                        :books:
+** [[file:./Designing Distributed Systems.org][Designing Distributed Systems]]                                        :books:
+** Cursor for development
+** DONE Foundational Learning <2026-08-01 Sat>
+** DONE Higher Order Functions - I <2026-07-01 Wed>
+** DONE Python as learning vehicle <2026-06-01 Mon>
+** DONE Binary Search + Python bisect <2026-05-01 Fri>
+** DONE RVM install with OpenSSL <2026-04-01 Wed>
+** DONE System Design Checklist <2026-03-01 Sun>
+** DONE Why write a blog <2026-02-01 Sun>
