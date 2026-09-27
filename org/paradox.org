@@ -1,0 +1,47 @@
+#+TITLE: Paradoxes
+#+DATE: 2026-08-15
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: decision
+#+JEKYLL_TAGS: life thoughts
+* Paradoxes
+I came to know about the existence and influence of Contrarian ideas in life and business while reading Peter Thiel's
+[[https://en.wikipedia.org/wiki/Zero_to_One][Zero to one]]. Post that, I started looking for Ideas or Paradoxes we use in everyday life that runs against our intuition. The following are some of the Paradoxes assimilated in my collection. I am not the original author of this work. This is an attempt to collect some of the Contrarian Ideas encountered in one place.
+
+The nature of these ideas instill a thought that sometimes you have to go "South" to go "North". A related mental model is the [[https://en.wikipedia.org/wiki/Diminishing_returns][Law of Diminishing Returns]], where the yield starts going down even after more efforts applied. Looking for opportunities to question things in life and apply them helped with better results avoiding a lot embarrassments and anxiety.
+
+Use them more like the [[https://en.wikipedia.org/wiki/Rule_of_thumb][rules of thumb]] and not like the empirical laws of Physics. They are not always black and white.
+There are no proofs either. It's more of an art than science. But being aware of them helps avoid regrettable outcomes
+
+** Backward Law
+*Stop looking in order to find what you are looking*. Trying harder does not help but hinder progress. When solving complex problems, giving a break or taking a walk helps more than continuing to solve the problem.
+
+** Speed Paradox
+There are times when you have to *slow down to speed up*. Taking time to structure thoughts in pencil / paper rather than jumping write code helps to build the system quicker.
+
+** Effort Paradox
+*More effort to make things appear effortless*. It took 18 years of hard work for Lionel Messi to become a overnight wonder. We only see the tip of the iceberg. There's a large "effort" surface hidden beneath in appearing effortless
+
+** Opportunity Paradox
+*Take on less, accomplish more*. This is a direct example of the Law of diminishing returns. We assume most things in life to follow a [[https://en.wikipedia.org/wiki/Discrete_uniform_distribution][Uniform Distribution]], but alas they tend to  follow [[https://en.wikipedia.org/wiki/Pareto_principle][Pareto Principle]] (or the 80 / 20 rule). *Not all tasks are created equal*. Like stocks, identify the high valued tasks and invest your efforts in them to get better returns
+
+** Productivity Paradox
+*Work longer, accomplish less*. Most of the management principles we use were created during the Industrial Revolution
+powering the Production Lines / Factories. The more time a worker spends in the assembly line, more the produce. In the software world or solving complex math problems this does not directly apply. In these disciplines, *quality trips quantity*. Most of the times a few quality timeboxes wins over spending uninteruppted long hours in front of the computers
+
+** Growth / Investment Paradox
+*Growth happens gradually and then suddenly*. Growth in life and business takes longer time than you think *even if you know the Growth Paradox*. But when the breakthrough happens it happens much faster than we can imagine. The classic example is the modern day AI systems. They went through a lot of winters before achieving the tremendous results in business, coding and in every day life. There's a lot of time spent in the *incubation period* before the *inflection point* is reached. After that, it accelerates in an exponential trajectory.
+
+** Desire Paradox
+This one is my personal favorite. *Desire leads to more achievement but also more sufferings*. Uncontrolled desires, distracts *the beauty of having enough*. Pursue Growth but never let *the chase for more blind you* to the value of what you already have. *Know when to stop*.
+
+** Fear Paradox
+Sometimes *the things we fear the most are often the one we want the most in life*. I personally feared criticisms and
+never published my web logs. The result, having a pile of notes / logs which I am sitting on top without publishing.
+Unless I overcome this fear, I would never be able to get the "constructive" feedback and form community with the like minded people.
+
+** Death Paradox
+*Know your death in order to truly live*. Understanding that life in this world is *ephemeral* makes you to take better choices.
+
+** Conclusion
+Though some of the paradoxes intersect more, I classified them under different section for *better understanding and
+absorption* Being aware of them, internalizing and then leveraging them will really help towards making better decisions in software and life in general.
